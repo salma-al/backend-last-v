@@ -72,7 +72,7 @@ export class UserService {
       });
       const expirationDate = new Date();
       expirationDate.setMonth(expirationDate.getMonth() + 1);
-      res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none' });
+      res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none', secure: true,  });
       return { message: 'Logged-In Successfully' };
     } else {
       let istruepass = await bcrypt.compare(
@@ -143,7 +143,7 @@ export class UserService {
         });
         const expirationDate = new Date();
         expirationDate.setMonth(expirationDate.getMonth() + 1);
-        res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none' });
+        res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none', secure: true,  });
         return { message: 'Account Verified', user: updateUser };
       } else {
         return { message: 'Please insert the right code' };
@@ -215,7 +215,7 @@ export class UserService {
       });
       const expirationDate = new Date();
       expirationDate.setMonth(expirationDate.getMonth() + 1);
-      res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none' });
+      res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none', secure: true });
       return { message: 'Password Updated ', user: updateUser };
     } else {
       return { message: 'Email is wrong' };
