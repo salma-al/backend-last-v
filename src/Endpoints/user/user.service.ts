@@ -72,7 +72,7 @@ export class UserService {
       });
       const expirationDate = new Date();
       expirationDate.setMonth(expirationDate.getMonth() + 1);
-      res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none', secure: true,  });
+      res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none', secure: true, domain: "backend-last-v.onrender.com" });
       return { message: 'Logged-In Successfully' };
     } else {
       let istruepass = await bcrypt.compare(
