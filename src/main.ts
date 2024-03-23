@@ -22,7 +22,7 @@ dotenv.config();
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const corsOptions: CorsOptions = {
-    origin: 'http://localhost:3000', // Allow requests from this origin
+    origin: 'https://65fd9813d6876b151f02e195--boisterous-axolotl-ffe419.netlify.app/', // Allow requests from this origin
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   };
