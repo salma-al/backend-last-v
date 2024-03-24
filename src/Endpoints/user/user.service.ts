@@ -70,10 +70,8 @@ export class UserService {
       let myJWT = await this.jwtService.sign({
         user: founduser,
       });
-      const expirationDate = new Date();
-      expirationDate.setMonth(expirationDate.getMonth() + 1);
-      res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none', secure: true, domain: "backend-last-v.onrender.com" });
-      return { message: 'Logged-In Successfully' };
+      
+      return { message: 'Logged-In Successfully', JWT: myJWT };
     } else {
       let istruepass = await bcrypt.compare(
         loguser.password,
