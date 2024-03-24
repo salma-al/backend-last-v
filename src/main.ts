@@ -23,7 +23,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const corsOptions: CorsOptions = {
     // origin: 'https://65fd9813d6876b151f02e195--boisterous-axolotl-ffe419.netlify.app/',
-    origin: 'https://cara-front-end.vercel.app/', // Allow requests from this origin
+    origin: 'https://cara-front-end.vercel.app', // Allow requests from this origin
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   };
