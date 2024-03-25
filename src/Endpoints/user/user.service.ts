@@ -27,9 +27,9 @@ export class UserService {
   async sendEmail(templateParams: any): Promise<any> {
     try {
       emailjs
-        .send('service_b0xm5gf', 'template_qtaro0e', templateParams, {
-          publicKey: 'UlECVUELiPKwmAoKz',
-          privateKey: 'Bjde393re_NC-GJWyd1vg',
+        .send('service_b67vj6a', 'template_ao735ve', templateParams, {
+          publicKey: 'llshoImPlHPEmJm1S',
+          privateKey: 'FM0etGu1IVbaQ-4rL2WRF',
         })
         .then(
           (response) => {
