@@ -24,7 +24,7 @@ export class CheckOutController {
 
   constructor(private readonly checkOutService: CheckOutService) {
     //     // Initialize Stripe with your API key
-    this.stripe = new Stripe(process.env.REACT_PUBLIC_STRIPE_SECRET_KEY, {
+    this.stripe = new Stripe('sk_test_51Orn7u09EgVYJWmOcYZzwwxxNStaeMJNuCIQZNHlrCJ9qeq7jCEB39OWz7F23TYk6f3N7DY5us6EKdZ6msAEWIXl00EwNe6Ga9', {
       apiVersion: '2023-10-16', // Ensure to use the latest API version
     });
   }
