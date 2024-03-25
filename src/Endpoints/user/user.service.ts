@@ -139,10 +139,10 @@ export class UserService {
         let myJWT = await this.jwtService.sign({
           user: foundUserJWT,
         });
-        const expirationDate = new Date();
-        expirationDate.setMonth(expirationDate.getMonth() + 1);
-        res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none', secure: true,  });
-        return { message: 'Account Verified', user: updateUser };
+        // const expirationDate = new Date();
+        // expirationDate.setMonth(expirationDate.getMonth() + 1);
+        // res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none', secure: true,  });
+        return { message: 'Account Verified', user: updateUser, JWT: myJWT };
       } else {
         return { message: 'Please insert the right code' };
       }
@@ -211,10 +211,10 @@ export class UserService {
       let myJWT = await this.jwtService.sign({
         user: foundUser,
       });
-      const expirationDate = new Date();
-      expirationDate.setMonth(expirationDate.getMonth() + 1);
-      res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none', secure: true });
-      return { message: 'Password Updated ', user: updateUser };
+      // const expirationDate = new Date();
+      // expirationDate.setMonth(expirationDate.getMonth() + 1);
+      // res.cookie('x-auth-token', myJWT, { expires: expirationDate, sameSite: 'none', secure: true });
+      return { message: 'Password Updated ', user: updateUser , JWT: myJWT};
     } else {
       return { message: 'Email is wrong' };
     }
